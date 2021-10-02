@@ -131,11 +131,13 @@ section {
     border-color: black;
     box-shadow: 5px 5px;
 }
-
 .img_news {
+    margin: 5px;
+}
+
+section a {
     display: flex;
     align-items: center;
-    margin: 5px;
 }
 .text_news {
     display: flex;
