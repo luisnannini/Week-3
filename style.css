@@ -154,6 +154,11 @@ section a {
     font-size: 1em;
 }
 
+#publicidad {
+    position: relative;
+    align-self: center;
+}
+
 /*Aside*/
 aside {
     display: flex;
