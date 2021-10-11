@@ -5,7 +5,6 @@
     padding: 0px;
     text-decoration: none;
     color: black;
-    
 }
 
 a:hover {
@@ -13,7 +12,6 @@ a:hover {
 }
 
 /*Top Bar - Social media*/
-
 .topbar {
     display: flex;
     justify-content: space-between;
@@ -38,8 +36,7 @@ a:hover {
     margin: 0 5px;
 }
 
-
-/*Nav Bar (make sticky)*/
+/*Nav Bar*/
 nav {
     display: flex;
     justify-content: space-between;
@@ -53,11 +50,6 @@ nav {
     flex-wrap: wrap;
 }
 
-a.navleft{
-    padding: 10px;
-    display: none;
-}
-
 .navleft li {
     display: flex;
     flex-wrap: wrap;
@@ -67,6 +59,14 @@ a.navleft{
     border-style: solid;
     border-width: 1px;
     border-color: white;
+}
+
+ul.navleft {
+    display: none;
+}
+
+a.navleft {
+    padding: 10px;
 }
 
 #logo {
@@ -220,13 +220,12 @@ footer a, footer p {
     font-weight: 500;
 }
 
-
-@media screen and (max-width: 768px) { 
-    ul.navleft {
+/*Query breakpoint*/
+@media screen and (min-width: 768px) {
+    a.navleft {
         display: none;
     }
-    a.navleft{
-        padding: 10px;
-        display: inherit;
+    ul.navleft {
+        display: flex;
     }
-  }
+}
