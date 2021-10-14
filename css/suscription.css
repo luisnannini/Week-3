@@ -1,0 +1,52 @@
+.suscribe-main {
+    background-color: rgb(151, 110, 60);
+    padding-bottom: 10px;
+}
+
+#h2-suscription {
+    display: flex;
+    justify-content: center;
+    font-size: 3em;
+    color: white;
+    padding: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sus-columns-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 5px 0;
+}
+
+.sus-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin: 0 5px;
+}
+
+.sus-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px 30px;
+    margin: 0 0 10px 0;
+    font-size: 1.5em;
+    border: solid rgb(70, 19, 19) 2px;
+}
+
+.button {
+    font-size: 1.5em;
+    margin: 2px 20px;
+    padding: 2px 20px;
+}
+
+.error-border {
+    border: red solid 2px;
+}
