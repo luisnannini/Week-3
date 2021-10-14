@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpincho Noticias | Inicio</title>
+    <link rel="stylesheet" type="text/css" href="css\normalize.css">
+    <link rel="stylesheet" type="text/css" href="css\style.css">
+    <script src="js\script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="topbar">
+            <div class="date">
+                <p>Oct. 2021</p>
+            </div>
+            <ul class="socials">
+                <li>
+                    <a href="instagram.com"> 
+                        <img width="20" height="20" title="Instagram" src="img/instagram.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="twitter.com" > 
+                        <img width="20" height="20" title="Twitter" src="img/twitter.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="facebook.com"> 
+                        <img width="20" height="20" title="Facebook" src="img/facebook.png">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <nav>
+            <a class="navleft" href="#">
+                <img width="30" alt="Menu" title= "Menu" src="img/menu.png">
+            </a>
+            <div class="navleft">
+                <a id="logo" href="index.html">
+                    <img width="100"  alt="CN Logo" title="CN Logo" src="img/logo-2.png">
+                </a>
+            </div>
+            <ul class="navleft">
+                <li>
+                    <a href="#">Inicio</a>
+                </li>
+                <li>
+                    <a href="#">Top 100</a>
+                </li>
+                <li>
+                    <a href="#">Entrevistas</a>
+                </li>
+                <li>
+                    <a href="#">Peleas</a>
+                </li>
+                <li>
+                    <a href="#">Tienda</a>
+                </li>
+                <li>
+                    <a href="#">Suscribete</a>
+                </li>
+            </ul>
+            <div class="navright">
+                <a href="index.html">
+                    <img width="30" alt="Buscar" title="Buscar" src="img/buscar.png">
+                </a>
+            </div>
+        </nav>
+        <h1>Carpincho Noticias</h1>
+    </header>
+    <div class="suscribe-main">
+        <h2 id="h2-suscription">
+            Subscription 
+        </h2>
+        <form>
+            <div class="sus-columns-container">
+                <div class="sus-column">
+                    <div class="sus-input">
+                        <div>
+                            <label>
+                                Full Name:
+                            </label>
+                        </div>
+                        <div>
+                            <input id="name" type="text" name="name">
+                            <span class="input-error"></span>
+                        </div>
+                    </div>
+                    <div class="sus-input">
+                        <div>
+                            <label>
+                                Email:
+                            </label>
+                        </div>
+                        <div>
+                            <input id="email" type="text" name="email">
+                            <span class="input-error"></span>
+                        </div>
+                    </div>
+                    <div class="sus-input">
+                        <div>
+                            <label>
+                                Password:
+                            </label>
+                        </div>
+                        <div>
+                            <input id="password" type="text" name="password">
+                            <span class="input-error"></span>
+                        </div>
+                    </div>
+                    <div class="sus-input">
+                        <div>
+                            <label>
+                                Repeat Password:
+                            </label>
+                        </div>
+                        <div>
+                            <input id="repeat-password" type="text" name="repeat-password">
+                            <span class="input-error"></span>
+                        </div>
+                    </div>
+                    <div class="sus-input">
+                        <div>
+                            <label>
+                                Age:
+                            </label>
+                        </div>
+                        <div>
+                            <input id="age" type="text" name="age">
+                            <span class="input-error"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sus-column">
+                    <div class="sus-input">
+                        <div>
+                            <label>
+                                Phone Number:
+                            </label>
+                        </div>
+                        <div>
+                            <input id="phone-number" type="text" name="phone-number">
+                            <span class="input-error"></span>
+                        </div>
+                    </div>
+                    <div class="sus-input">
+                        <div>
+                            <label>
+                                Address:
+                            </label>
+                        </div>
+                        <div>
+                            <input id="address" type="text" name="address">
+                            <span class="input-error"></span>
+                        </div>
+                    </div>
+                    <div class="sus-input">
+                        <div>
+                            <label>
+                                City:
+                            </label>
+                        </div>
+                        <div>
+                            <input id="city" type="text" name="city">
+                            <span class="input-error"></span>
+                        </div>
+                    </div>
+                    <div class="sus-input">
+                        <div>
+                            <label>
+                                Postal Code:
+                            </label>
+                        </div>
+                        <div>
+                            <input id="postal-code" type="text" name="postal-code">
+                            <span class="input-error"></span>
+                        </div>
+                    </div>
+                    <div class="sus-input">
+                        <div>
+                            <label>
+                                DNI:
+                            </label>
+                        </div>
+                        <div>
+                            <input id="dni" type="text" name="dni">
+                            <span class="input-error"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input class="button" type="submit" value="Send">
+        </form>      
+    </div>
+    <footer>
+        <div class="suscribe">
+            <a href="#">Suscribite a las noticias por email</a>
+        </div>
+        <div class="copyright">
+            <p>© 2021 CN todos los derechos reservados</p>
+        </div>
+    </footer>    
+</body>
+</html>
