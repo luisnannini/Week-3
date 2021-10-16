@@ -83,10 +83,12 @@
                             <label>
                                 Full Name:
                             </label>
+                            <input id="name" type="text" placeholder="Full name">
                         </div>
                         <div>
-                            <input id="name" type="text" name="name">
-                            <span class="input-error"></span>
+                            <span id="input-error-name" class="input-error">
+                                *Full name must be more than 6 characters long and contain a space
+                            </span>
                         </div>
                     </div>
                     <div class="sus-input">
@@ -94,10 +96,12 @@
                             <label>
                                 Email:
                             </label>
+                            <input id="email" type="email" placeholder="your@email.com">
                         </div>
                         <div>
-                            <input id="email" type="text" name="email">
-                            <span class="input-error"></span>
+                            <span id="input-error-email" class="input-error">
+                                Please enter a valid email
+                            </span>
                         </div>
                     </div>
                     <div class="sus-input">
@@ -105,10 +109,12 @@
                             <label>
                                 Password:
                             </label>
+                            <input id="password" type="password">
                         </div>
                         <div>
-                            <input id="password" type="text" name="password">
-                            <span class="input-error"></span>
+                            <span id="input-error-password" class="input-error">
+                                Must be longer than 8 and contain 1 number and 1 letter
+                            </span>
                         </div>
                     </div>
                     <div class="sus-input">
@@ -116,10 +122,12 @@
                             <label>
                                 Repeat Password:
                             </label>
+                            <input id="repeat-password" type="password">
                         </div>
                         <div>
-                            <input id="repeat-password" type="text" name="repeat-password">
-                            <span class="input-error"></span>
+                            <span id="input-error-repeat-password" class="input-error">
+                                Passwords are different
+                            </span>
                         </div>
                     </div>
                     <div class="sus-input">
@@ -127,10 +135,12 @@
                             <label>
                                 Age:
                             </label>
+                            <input id="age" type="number" min="18">
                         </div>
                         <div>
-                            <input id="age" type="text" name="age">
-                            <span class="input-error"></span>
+                            <span id="input-error-age" class="input-error">
+                                Yo must be 18 or older
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -138,23 +148,27 @@
                     <div class="sus-input">
                         <div>
                             <label>
-                                Phone Number:
+                                A Phone Number:
                             </label>
+                            <input id="phone" type="tel">
                         </div>
                         <div>
-                            <input id="phone-number" type="text" name="phone-number">
-                            <span class="input-error"></span>
+                            <span id="input-error-phone" class="input-error">
+                                Must be longer than 7 with no simbols or spaces
+                            </span>
                         </div>
                     </div>
-                    <div class="sus-input">
+                    <div class="sus-input"> 
                         <div>
                             <label>
                                 Address:
                             </label>
+                            <input id="address" type="text" placeholder="Street 1234">
                         </div>
                         <div>
-                            <input id="address" type="text" name="address">
-                            <span class="input-error"></span>
+                            <span id="input-error-address" class="input-error">
+                                Must be longer than 5 and contain a number
+                            </span>
                         </div>
                     </div>
                     <div class="sus-input">
@@ -162,10 +176,12 @@
                             <label>
                                 City:
                             </label>
+                            <input id="city" type="text" placeholder="City">
                         </div>
                         <div>
-                            <input id="city" type="text" name="city">
-                            <span class="input-error"></span>
+                            <span id="input-error-city" class="input-error">
+                                City error
+                            </span>
                         </div>
                     </div>
                     <div class="sus-input">
@@ -173,10 +189,12 @@
                             <label>
                                 Postal Code:
                             </label>
+                            <input id="postal" type="text">
                         </div>
                         <div>
-                            <input id="postal-code" type="text" name="postal-code">
-                            <span class="input-error"></span>
+                            <span id="input-error-postal" class="input-error">
+                                Postal Code Error
+                            </span>
                         </div>
                     </div>
                     <div class="sus-input">
@@ -184,10 +202,12 @@
                             <label>
                                 DNI:
                             </label>
+                            <input id="dni" type="number" minlength="7" maxlength="8">
                         </div>
                         <div>
-                            <input id="dni" type="text" name="dni">
-                            <span class="input-error"></span>
+                            <span id="input-error-dni" class="input-error">
+                                Enter a valid DNI number
+                            </span>
                         </div>
                     </div>
                 </div>

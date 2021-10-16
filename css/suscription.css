@@ -35,6 +35,7 @@ form {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: column;
     padding: 10px 10px 30px;
     margin: 0 0 10px 0;
     font-size: 1.5em;
@@ -49,4 +50,11 @@ form {
 
 .error-border {
     border: red solid 2px;
+}
+
+.input-error {
+    color: rgb(255, 255, 255);
+    font-size: 0.6em;
+    font-style: italic;
+    opacity : 0;
 }
