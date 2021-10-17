@@ -1,5 +1,5 @@
 # Week 5: Javascript DOM
-Subscription Github Page: https://luisnannini.github.io/Week-3/suscription
+Subscription Github Page: https://luisnannini.github.io/Week-3/subscription
 
 # Week 3: CSS Responsive
 Home Github Page: https://luisnannini.github.io/Week-3/
