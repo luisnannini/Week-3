@@ -3,12 +3,26 @@
     padding-bottom: 10px;
 }
 
+.greet-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#name-greet {
+    font-size: 1.2em;
+    color: white;
+    padding: 10px 20px 0px;
+    opacity: 0;
+}
+
 #h2-suscription {
     display: flex;
     justify-content: center;
     font-size: 3em;
     color: white;
-    padding: 5px;
+    padding: 0 0 20px;
 }
 
 form {
@@ -46,6 +60,10 @@ form {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+input {
+    border: solid rgb(70, 19, 19) 2px;
 }
 
 #button {

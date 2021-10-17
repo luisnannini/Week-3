@@ -102,7 +102,7 @@ var ageInputError = document.getElementById("input-error-age")
 ageInput.addEventListener("blur", ageOnBlur)
 function ageOnBlur() {
     var x = ageInput.value
-    if (x < 18 || isNaN(x) || !is_float(x) || x.includes('.')) {        
+    if (x < 18) {        
         ageInput.classList.add("error-border")        
         ageInputError.style.opacity = "1"
         inputErrors[4] = ageInputError.textContent
@@ -255,19 +255,18 @@ function clickButton() {
         postalOnBlur() == true &&
         dniOnBlur() == true
         ) {
-        alert(inputValues.join(" "))
-    } else if (
-        nameOnBlur() == false ||
-        emailOnBlur() == false ||
-        passwordOnBlur() == false ||
-        passwordRepeatOnBlur() == false ||
-        ageOnBlur() == false ||
-        phoneOnBlur() == false ||
-        addressOnBlur() == false ||
-        cityOnBlur() == false ||
-        postalOnBlur() == false ||
-        dniOnBlur() == false
-        ) {
-        alert(inputErrors.join(" "))
+        alert("Your Data: \n" + inputValues.join(" "))
+    } else {
+        alert("Error: \n" + inputErrors.join(" "))
     }
+}
+
+// Autocomplete Name
+nameInput.addEventListener('keydown', nameGreet)
+nameInput.addEventListener('keyup', nameGreet)
+function nameGreet() {
+    var text = nameInput.value
+    var titleName = document.getElementById('name-greet')
+    titleName.style.opacity = "1"
+    titleName.innerHTML = "Hello " + text
 }
