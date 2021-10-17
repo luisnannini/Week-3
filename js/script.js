@@ -271,4 +271,3 @@ function clickButton() {
         alert(inputErrors.join(" "))
     }
 }
-
