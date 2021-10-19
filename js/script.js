@@ -31,7 +31,7 @@ var emailInput = document.getElementById('email')
 var emailInputError = document.getElementById('input-error-email')
 function emailOnBlur() {    
     var x = emailInput.value
-    if (x.indexOf('@') == -1 || x.indexOf('.') == -1 || x.includes(' ') == true || 
+    if (x.indexOf('@') == -1 || x.indexOf('.') == -1 || x.includes(' ') || 
         x.indexOf('@') == 0 || x.indexOf('.') == email.length) {        
         emailInput.classList.add('error-border')        
         emailInputError.style.opacity = '1'
@@ -128,7 +128,7 @@ var phoneInput = document.getElementById('phone')
 var phoneInputError = document.getElementById('input-error-phone')
 function phoneOnBlur() {
     var x = phoneInput.value
-    if (x.length < 7 || isNaN(x) || !is_float(x) || x.includes('.') || x.includes(' ')) {        
+    if (x.length < 7 || isNaN(x) || x.includes('.') || x.includes(' ')) {        
         phoneInput.classList.add('error-border')        
         phoneInputError.style.opacity = '1'
         inputErrors[5] = phoneInputError.textContent
@@ -247,16 +247,16 @@ dniInput.addEventListener('focus', dniOnFocus)
 var button = document.getElementById('button')
 function clickButton() {
     if (
-        nameOnBlur() == true &&
-        emailOnBlur() == true &&
-        passwordOnBlur() == true &&
-        passwordRepeatOnBlur() == true &&
-        ageOnBlur() == true &&
-        phoneOnBlur() == true &&
-        addressOnBlur() == true &&
-        cityOnBlur() == true &&
-        postalOnBlur() == true &&
-        dniOnBlur() == true
+        nameOnBlur() &&
+        emailOnBlur() &&
+        passwordOnBlur() &&
+        passwordRepeatOnBlur() &&
+        ageOnBlur() &&
+        phoneOnBlur() &&
+        addressOnBlur() &&
+        cityOnBlur() &&
+        postalOnBlur() &&
+        dniOnBlur()
         ) {
         alert('Your Data: \n' + inputValues.join(' '))
     } else {
