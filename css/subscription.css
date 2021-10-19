@@ -49,8 +49,7 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: left;
-    padding: 10px 10px 30px;
+    padding: 10px 10px 10px;
     margin: 0 0 10px 0;
     font-size: 1.2em;
     border: solid rgb(70, 19, 19) 2px;
