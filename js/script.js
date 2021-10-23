@@ -15,13 +15,14 @@ function nameOnBlur() {
     } else {
         nameInput.classList.remove('error-border')
         nameInputError.style.opacity = '0'
-        inputValues[0] = 'Full Name: ' + x + '\n'
+        inputValues[0] = 'Full Name: ' + x
         return true
     }
 }
 function nameOnFocus() {
     nameInput.classList.remove('error-border')
     nameInputError.style.opacity = '0'
+    nameInput.select()
 }
 nameInput.addEventListener('blur', nameOnBlur)
 nameInput.addEventListener('focus', nameOnFocus)
@@ -40,13 +41,14 @@ function emailOnBlur() {
     } else {
         emailInput.classList.remove('error-border')
         emailInputError.style.opacity = '0'
-        inputValues[1] = 'Email: ' + x + '\n'
+        inputValues[1] = 'Email: ' + x
         return true
     }
 }
 function emailOnFocus() {
     emailInput.classList.remove('error-border')
     emailInputError.style.opacity = '0'
+    emailInput.select()
 }
 emailInput.addEventListener('blur', emailOnBlur)
 emailInput.addEventListener('focus', emailOnFocus)
@@ -64,13 +66,14 @@ function passwordOnBlur() {
     } else {
         passwordInput.classList.remove('error-border')
         passwordInputError.style.opacity = '0'
-        inputValues[2] = 'Password: ' + x + '\n'
+        inputValues[2] = 'Password: ' + x
         return true
     }
 }
 function passwordOnFocus() {
     passwordInput.classList.remove('error-border')
     passwordInputError.style.opacity = '0'
+    passwordInput.select()
 }
 passwordInput.addEventListener('blur', passwordOnBlur)
 passwordInput.addEventListener('focus', passwordOnFocus)
@@ -88,13 +91,14 @@ function passwordRepeatOnBlur() {
     } else {
         passwordRepeatInput.classList.remove('error-border')
         passwordRepeatInputError.style.opacity = '0'
-        inputValues[3] = 'Password Repeat: ' + x + '\n'
+        inputValues[3] = 'Password Repeat: ' + x
         return true
     }
 }
 function passwordRepeatOnFocus() {
     passwordRepeatInput.classList.remove('error-border')
     passwordRepeatInputError.style.opacity = '0'
+    passwordRepeatInput.select()
 }
 passwordRepeatInput.addEventListener('blur', passwordRepeatOnBlur)
 passwordRepeatInput.addEventListener('focus', passwordRepeatOnFocus)
@@ -112,13 +116,14 @@ function ageOnBlur() {
     } else {
         ageInput.classList.remove('error-border')
         ageInputError.style.opacity = '0'
-        inputValues[4] = 'Age: ' + x + '\n'
+        inputValues[4] = 'Age: ' + x
         return true
     }
 }
 function ageOnFocus() {
     ageInput.classList.remove('error-border')
     ageInputError.style.opacity = '0'
+    ageInput.select()
 }
 ageInput.addEventListener('blur', ageOnBlur)
 ageInput.addEventListener('focus', ageOnFocus)
@@ -136,13 +141,14 @@ function phoneOnBlur() {
     } else {
         phoneInput.classList.remove('error-border')
         phoneInputError.style.opacity = '0'
-        inputValues[5] = 'Phone Number: ' + x + '\n'
+        inputValues[5] = 'Phone Number: ' + x
         return true
     }
 }
 function phoneOnFocus() {
     phoneInput.classList.remove('error-border')
     phoneInputError.style.opacity = '0'
+    phoneInput.select()
 }
 phoneInput.addEventListener('blur', phoneOnBlur)
 phoneInput.addEventListener('focus', phoneOnFocus)
@@ -160,13 +166,14 @@ function addressOnBlur() {
     } else {
         addressInput.classList.remove('error-border')
         addressInputError.style.opacity = '0'
-        inputValues[6] = 'Address: ' + x + '\n'
+        inputValues[6] = 'Address: ' + x
         return true
     }
 }
 function addressOnFocus() {
     addressInput.classList.remove('error-border')
     addressInputError.style.opacity = '0'
+    addressInput.select()
 }
 addressInput.addEventListener('blur', addressOnBlur)
 addressInput.addEventListener('focus', addressOnFocus)
@@ -184,13 +191,14 @@ function cityOnBlur() {
     } else {
         cityInput.classList.remove('error-border')
         cityInputError.style.opacity = '0'
-        inputValues[7] = 'City: ' + x + '\n'
+        inputValues[7] = 'City: ' + x
         return true
     }
 }
 function cityOnFocus() {
     cityInput.classList.remove('error-border')
     cityInputError.style.opacity = '0'
+    cityInput.select()
 }
 cityInput.addEventListener('blur', cityOnBlur)
 cityInput.addEventListener('focus', cityOnFocus)
@@ -208,13 +216,14 @@ function postalOnBlur() {
     } else {
         postalInput.classList.remove('error-border')
         postalInputError.style.opacity = '0'
-        inputValues[8] = 'Postal Code: ' + x + '\n'
+        inputValues[8] = 'Postal Code: ' + x
         return true
     }
 }
 function postalOnFocus() {
     postalInput.classList.remove('error-border')
     postalInputError.style.opacity = '0'
+    postalInput.select()
 }
 postalInput.addEventListener('blur', postalOnBlur)
 postalInput.addEventListener('focus', postalOnFocus)
@@ -232,64 +241,121 @@ function dniOnBlur() {
     } else {
         dniInput.classList.remove('error-border')
         dniInputError.style.opacity = '0'
-        inputValues[9] = 'DNI: ' + x + '\n'
+        inputValues[9] = 'DNI: ' + x
         return true
     }
 }
 function dniOnFocus() {
     dniInput.classList.remove('error-border')
     dniInputError.style.opacity = '0'
+    dniInput.select()
 }
 dniInput.addEventListener('blur', dniOnBlur)
 dniInput.addEventListener('focus', dniOnFocus)
 
 // Autocomplete Name
 function nameGreet() {
-    var text = nameInput.value
     var titleName = document.getElementById('name-greet')
     titleName.style.opacity = '1'
-    titleName.innerHTML = 'Hello ' + text
+    titleName.innerText = 'Hello ' + nameInput.value
 }
 nameInput.addEventListener('keydown', nameGreet)
 nameInput.addEventListener('keyup', nameGreet)
 
-// Button
+///////////////////////////////////////////////////////// Button
 var button = document.getElementById('button')
+// Function to uptate value/error state when clicking again the button
+function callAll() {
+    nameOnBlur(), emailOnBlur(), passwordOnBlur(), passwordRepeatOnBlur(), ageOnBlur(),
+    phoneOnBlur(), addressOnBlur(), cityOnBlur(), postalOnBlur(), dniOnBlur()
+}
 function clickButton() {
-    if (
-        nameOnBlur() &&
-        emailOnBlur() &&
-        passwordOnBlur() &&
-        passwordRepeatOnBlur() &&
-        ageOnBlur() &&
-        phoneOnBlur() &&
-        addressOnBlur() &&
-        cityOnBlur() &&
-        postalOnBlur() &&
-        dniOnBlur()
-        ) {
-   //     alert('Your Data: \n' + inputValues.join(' '))
+    callAll()
+    //If every input is validated call corresponding Modal Function to Show Inputs or else Show Errors
+    if (nameOnBlur() && emailOnBlur() && passwordOnBlur() && passwordRepeatOnBlur() && ageOnBlur()
+        && phoneOnBlur() && addressOnBlur() && cityOnBlur() && postalOnBlur() && dniOnBlur()
+       ){
+        modalFillValues()
+        fetching()
     } else {
-   //     alert('Error: \n' + inputErrors.join(' '))
+        callAll()
+        modalFillErrors()
     }
 }
 button.addEventListener('click', clickButton)
-
-///////////////////////////////////////////////////Semana 06////////////////////////////////////////////////////////////
-// Get the modal & Span (X)
+////////////////////////////////////////////////////Modal and Fetch
+// Modal Toggle
 var modal = document.getElementById('myModal')
 var span = document.getElementsByClassName('close')[0]
-// When the user clicks on the button, open the modal
-button.onclick = function() {
+button.onclick = function() {// When the user clicks on the button, open the modal
   modal.style.display = 'block'
 }
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+span.onclick = function() {// When the user clicks on <span> (x), close the modal
   modal.style.display = 'none'
 }
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+window.onclick = function(event) {// When the user clicks anywhere outside of the modal, close it
   if (event.target == modal) {
     modal.style.display = 'none'
   }
 }
+// Modal Fills Functions
+var ulModal = document.getElementById('ul-modal')
+function modalFillValues() {
+    ulModal.innerHTML = '<p>Succes !</p>'
+    for (let i = 0; i < inputValues.length; i++) {
+        ulModal.innerHTML = ulModal.innerHTML + '<li>' + inputValues[i] + '</li>'
+        if (inputValues[i] = 'undefined') inputValues[i] = ''
+    }
+}
+function modalFillErrors() {
+    ulModal.innerHTML = 'Error: '
+    for (let i = 0; i < inputErrors.length; i++) {
+        ulModal.innerHTML = ulModal.innerHTML + '<li>' + inputErrors[i] + '</li>'
+    }
+}
+// URL Fetch
+function fetching() {
+    var url = 'http://curso-dev-2021.herokuapp.com/newsletter?name=' + nameInput.value + '&email=' + emailInput.value
+            + '&password=' + passwordInput.value + '&passwordR=' + passwordRepeatInput.value
+            + '&age=' + ageInput.value + '&phone=' + phoneInput.value + '&address=' + addressInput.value
+            + '&city=' + cityInput.value + '&postalcode=' + postalInput.value + '&dni=' + dniInput.value
+    fetch(url)
+        .then (function (res) {
+            console.log(url)
+            return res.json()
+        })
+        .then (function(data) {
+            console.log(data)
+            sendToStorage()
+        })
+        .catch(function(err) {
+            console.log(err) 
+        })
+}
+// localStorage Send
+function sendToStorage() {
+    localStorage.setItem('name', nameInput.value)
+    localStorage.setItem('email', emailInput.value)
+    localStorage.setItem('password', passwordInput.value)
+    localStorage.setItem('passwordR', passwordRepeatInput.value)
+    localStorage.setItem('age', ageInput.value)
+    localStorage.setItem('phone', phoneInput.value)
+    localStorage.setItem('address', addressInput.value)
+    localStorage.setItem('city', cityInput.value)
+    localStorage.setItem('postalcode', postalInput.value)
+    localStorage.setItem('dni', dniInput.value)
+}
+// localStorage Get
+function getItems() {
+    if (localStorage.getItem('name') != '') nameInput.value = localStorage.getItem('name')
+    if (localStorage.getItem('email') != '') emailInput.value = localStorage.getItem('email')
+    if (localStorage.getItem('password') != '') passwordInput.value = localStorage.getItem('password')
+    if (localStorage.getItem('passwordR') != '') passwordRepeatInput.value = localStorage.getItem('passwordR')
+    if (localStorage.getItem('age') != '') ageInput.value = localStorage.getItem('age')
+    if (localStorage.getItem('phone') != '') phoneInput.value = localStorage.getItem('phone')
+    if (localStorage.getItem('address') != '') addressInput.value = localStorage.getItem('address')
+    if (localStorage.getItem('city') != '') cityInput.value = localStorage.getItem('city')
+    if (localStorage.getItem('postalcode') != '') postalInput.value = localStorage.getItem('postalcode')
+    if (localStorage.getItem('dni') != '') dniInput.value = localStorage.getItem('dni')
+}
+document.onload = getItems()

@@ -81,7 +81,7 @@ input {
     font-style: italic;
     opacity : 0;
 }
-/*//////////////////////////////////////////////////Semana 06///////////////////////////////////////////////*/
+/*//////////////////////////////////////////////////Week 06///////////////////////////////////////////////*/
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -104,8 +104,8 @@ input {
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
-    border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
+    border: rgb(151, 110, 60) 1em solid;
 }
 
 /* The Close Button */
