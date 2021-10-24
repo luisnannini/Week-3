@@ -2,7 +2,7 @@
 Subscription Github Page: https://luisnannini.github.io/Week-3/subscription
 
 ## Goal
-Create a modal to show the inputs (or errors), save at local storage and sumbit them to a server.
+Create a modal to show the inputs (or errors), then send them to a server and save at local storage.
 ## Comments
 
 # Week 5: Javascript DOM

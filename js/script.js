@@ -336,7 +336,7 @@ function fetching() {
         })
         .then (function(data) {
             console.log(data)
-            modalFillValues()            
+            modalFillValues()
             sendToStorage()
         })
         .catch(function(err) {
