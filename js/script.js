@@ -16,6 +16,7 @@ function nameOnBlur() {
         nameInput.classList.remove('error-border')
         nameInputError.style.opacity = '0'
         inputValues[0] = 'Full Name: ' + x
+        inputErrors[0] = ''
         return true
     }
 }
@@ -42,6 +43,7 @@ function emailOnBlur() {
         emailInput.classList.remove('error-border')
         emailInputError.style.opacity = '0'
         inputValues[1] = 'Email: ' + x
+        inputErrors[1] = ''
         return true
     }
 }
@@ -67,6 +69,7 @@ function passwordOnBlur() {
         passwordInput.classList.remove('error-border')
         passwordInputError.style.opacity = '0'
         inputValues[2] = 'Password: ' + x
+        inputErrors[2] = ''
         return true
     }
 }
@@ -92,6 +95,7 @@ function passwordRepeatOnBlur() {
         passwordRepeatInput.classList.remove('error-border')
         passwordRepeatInputError.style.opacity = '0'
         inputValues[3] = 'Password Repeat: ' + x
+        inputErrors[3] = ''
         return true
     }
 }
@@ -117,6 +121,7 @@ function ageOnBlur() {
         ageInput.classList.remove('error-border')
         ageInputError.style.opacity = '0'
         inputValues[4] = 'Age: ' + x
+        inputErrors[4] = ''
         return true
     }
 }
@@ -142,6 +147,7 @@ function phoneOnBlur() {
         phoneInput.classList.remove('error-border')
         phoneInputError.style.opacity = '0'
         inputValues[5] = 'Phone Number: ' + x
+        inputErrors[5] = ''
         return true
     }
 }
@@ -167,6 +173,7 @@ function addressOnBlur() {
         addressInput.classList.remove('error-border')
         addressInputError.style.opacity = '0'
         inputValues[6] = 'Address: ' + x
+        inputErrors[6] = ''
         return true
     }
 }
@@ -192,6 +199,7 @@ function cityOnBlur() {
         cityInput.classList.remove('error-border')
         cityInputError.style.opacity = '0'
         inputValues[7] = 'City: ' + x
+        inputErrors[7] = ''
         return true
     }
 }
@@ -217,6 +225,7 @@ function postalOnBlur() {
         postalInput.classList.remove('error-border')
         postalInputError.style.opacity = '0'
         inputValues[8] = 'Postal Code: ' + x
+        inputErrors[8] = ''
         return true
     }
 }
@@ -242,6 +251,7 @@ function dniOnBlur() {
         dniInput.classList.remove('error-border')
         dniInputError.style.opacity = '0'
         inputValues[9] = 'DNI: ' + x
+        inputErrors[9] = ''
         return true
     }
 }
@@ -307,6 +317,9 @@ function modalFillErrors() {
         ulModal.innerHTML = ulModal.innerHTML + '<li>' + inputErrors[i] + '</li>'
     }
 }
+function networkError(err) {
+    ulModal.innerHTML = 'Newtwork Error: ' + err
+}
 // URL Fetch
 function fetching() {
     var url = 'https://curso-dev-2021.herokuapp.com/newsletter?name=' + nameInput.value + '&email=' + emailInput.value
@@ -327,7 +340,8 @@ function fetching() {
             sendToStorage()
         })
         .catch(function(err) {
-            console.log(err) 
+            networkError(err)
+            console.log(err)
         })
 }
 // localStorage Send
