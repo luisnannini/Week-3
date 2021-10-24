@@ -264,27 +264,22 @@ nameInput.addEventListener('keyup', nameGreet)
 
 ///////////////////////////////////////////////////////// Button
 var button = document.getElementById('button')
-// Function to uptate value/error state when clicking again the button
-function callAll() {
+function clickButton() {
+    // Call every function update value/error state when clicking again the button
     nameOnBlur(), emailOnBlur(), passwordOnBlur(), passwordRepeatOnBlur(), ageOnBlur(),
     phoneOnBlur(), addressOnBlur(), cityOnBlur(), postalOnBlur(), dniOnBlur()
-}
-function clickButton() {
-    callAll()
-    //If every input is validated call corresponding Modal Function to Show Inputs or else Show Errors
+    //Validate inputs and call corresponding function
     if (nameOnBlur() && emailOnBlur() && passwordOnBlur() && passwordRepeatOnBlur() && ageOnBlur()
         && phoneOnBlur() && addressOnBlur() && cityOnBlur() && postalOnBlur() && dniOnBlur()
        ){
-        modalFillValues()
         fetching()
     } else {
-        callAll()
         modalFillErrors()
     }
 }
 button.addEventListener('click', clickButton)
 ////////////////////////////////////////////////////Modal and Fetch
-// Modal Toggle
+// Modal Show/hide
 var modal = document.getElementById('myModal')
 var span = document.getElementsByClassName('close')[0]
 button.onclick = function() {// When the user clicks on the button, open the modal
@@ -298,13 +293,12 @@ window.onclick = function(event) {// When the user clicks anywhere outside of th
     modal.style.display = 'none'
   }
 }
-// Modal Fills Functions
+// Modal Fill Functions
 var ulModal = document.getElementById('ul-modal')
 function modalFillValues() {
     ulModal.innerHTML = '<p>Succes !</p>'
     for (let i = 0; i < inputValues.length; i++) {
         ulModal.innerHTML = ulModal.innerHTML + '<li>' + inputValues[i] + '</li>'
-        if (inputValues[i] = 'undefined') inputValues[i] = ''
     }
 }
 function modalFillErrors() {
@@ -315,17 +309,21 @@ function modalFillErrors() {
 }
 // URL Fetch
 function fetching() {
-    var url = 'http://curso-dev-2021.herokuapp.com/newsletter?name=' + nameInput.value + '&email=' + emailInput.value
+    var url = 'https://curso-dev-2021.herokuapp.com/newsletter?name=' + nameInput.value + '&email=' + emailInput.value
             + '&password=' + passwordInput.value + '&passwordR=' + passwordRepeatInput.value
             + '&age=' + ageInput.value + '&phone=' + phoneInput.value + '&address=' + addressInput.value
             + '&city=' + cityInput.value + '&postalcode=' + postalInput.value + '&dni=' + dniInput.value
     fetch(url)
-        .then (function (res) {
-            console.log(url)
-            return res.json()
+        .then(function(res) {
+            if (res.status === 200) {
+                return res.json()
+            } else {
+                throw res.status
+            }
         })
         .then (function(data) {
             console.log(data)
+            modalFillValues()            
             sendToStorage()
         })
         .catch(function(err) {
@@ -358,4 +356,4 @@ function getItems() {
     if (localStorage.getItem('postalcode') != '') postalInput.value = localStorage.getItem('postalcode')
     if (localStorage.getItem('dni') != '') dniInput.value = localStorage.getItem('dni')
 }
-document.onload = getItems()
+window.onload = getItems()
