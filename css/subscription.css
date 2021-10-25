@@ -10,7 +10,7 @@
 
 }
 
-#name-greet {
+.name-greet {
     font-size: 1.2em;
     color: white;
     padding: 10px 20px 0px;
@@ -71,16 +71,21 @@ input {
     padding: 2px 20%;
 }
 
-.error-border {
-    border: red solid 2px;
-}
-
 .input-error {
     color: rgb(255, 255, 255);
     font-size: 0.6em;
     font-style: italic;
-    opacity : 0;
+    opacity: 0;
 }
+
+.error-border {
+    border: red solid 2px;
+}
+
+.opacity-1 {
+    opacity: 1;
+}
+    
 /*//////////////////////////////////////////////////Week 06///////////////////////////////////////////////*/
 /* The Modal (background) */
 .modal {
@@ -120,4 +125,9 @@ input {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* Show Modal */
+.modal-show {
+    display: block;
 }

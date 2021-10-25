@@ -8,13 +8,11 @@ var nameInputError = document.getElementById('input-error-name')
 function nameOnBlur() {    
     var x = nameInput.value
     if (x.length < 7 || x.indexOf(' ') <= 0 || x.indexOf(' ') >= x.length) {        
-        nameInput.classList.add('error-border')        
-        nameInputError.style.opacity = '1'
+        nameInput.classList.add('error-border')
+        nameInputError.classList.add('opacity-1')
         inputErrors[0] = nameInputError.textContent
         return false
     } else {
-        nameInput.classList.remove('error-border')
-        nameInputError.style.opacity = '0'
         inputValues[0] = 'Full Name: ' + x
         inputErrors[0] = ''
         return true
@@ -22,7 +20,7 @@ function nameOnBlur() {
 }
 function nameOnFocus() {
     nameInput.classList.remove('error-border')
-    nameInputError.style.opacity = '0'
+    nameInputError.classList.remove('opacity-1')
     nameInput.select()
 }
 nameInput.addEventListener('blur', nameOnBlur)
@@ -35,13 +33,11 @@ function emailOnBlur() {
     var x = emailInput.value
     if (x.indexOf('@') == -1 || x.indexOf('.') == -1 || x.includes(' ') || 
         x.indexOf('@') == 0 || x.indexOf('.') == email.length) {        
-        emailInput.classList.add('error-border')        
-        emailInputError.style.opacity = '1'
+        emailInput.classList.add('error-border')
+        emailInputError.classList.add('opacity-1')
         inputErrors[1] = emailInputError.textContent
         return false
     } else {
-        emailInput.classList.remove('error-border')
-        emailInputError.style.opacity = '0'
         inputValues[1] = 'Email: ' + x
         inputErrors[1] = ''
         return true
@@ -49,7 +45,7 @@ function emailOnBlur() {
 }
 function emailOnFocus() {
     emailInput.classList.remove('error-border')
-    emailInputError.style.opacity = '0'
+    emailInputError.classList.remove('opacity-1')
     emailInput.select()
 }
 emailInput.addEventListener('blur', emailOnBlur)
@@ -62,12 +58,11 @@ function passwordOnBlur() {
     var x = passwordInput.value
     if (x.length < 8 || x.search(/[a-z]/) < 0 || x.search(/[0-9]/) < 0 || x.search(/\W/) != -1) {        
         passwordInput.classList.add('error-border')        
-        passwordInputError.style.opacity = '1'
+        passwordInputError.classList.add('opacity-1')
         inputErrors[2] = passwordInputError.textContent
         return false
     } else {
         passwordInput.classList.remove('error-border')
-        passwordInputError.style.opacity = '0'
         inputValues[2] = 'Password: ' + x
         inputErrors[2] = ''
         return true
@@ -75,7 +70,7 @@ function passwordOnBlur() {
 }
 function passwordOnFocus() {
     passwordInput.classList.remove('error-border')
-    passwordInputError.style.opacity = '0'
+    passwordInputError.classList.remove('opacity-1')
     passwordInput.select()
 }
 passwordInput.addEventListener('blur', passwordOnBlur)
@@ -88,12 +83,11 @@ function passwordRepeatOnBlur() {
     var x = passwordRepeatInput.value
     if (x != passwordInput.value) {        
         passwordRepeatInput.classList.add('error-border')        
-        passwordRepeatInputError.style.opacity = '1'
+        passwordRepeatInputError.classList.add('opacity-1')
         inputErrors[3] = passwordRepeatInputError.textContent
         return false
     } else {
         passwordRepeatInput.classList.remove('error-border')
-        passwordRepeatInputError.style.opacity = '0'
         inputValues[3] = 'Password Repeat: ' + x
         inputErrors[3] = ''
         return true
@@ -101,7 +95,7 @@ function passwordRepeatOnBlur() {
 }
 function passwordRepeatOnFocus() {
     passwordRepeatInput.classList.remove('error-border')
-    passwordRepeatInputError.style.opacity = '0'
+    passwordRepeatInputError.classList.remove('opacity-1')
     passwordRepeatInput.select()
 }
 passwordRepeatInput.addEventListener('blur', passwordRepeatOnBlur)
@@ -114,12 +108,11 @@ function ageOnBlur() {
     var x = ageInput.value
     if (x < 18) {        
         ageInput.classList.add('error-border')        
-        ageInputError.style.opacity = '1'
+        ageInputError.classList.add('opacity-1')
         inputErrors[4] = ageInputError.textContent
         return false
     } else {
         ageInput.classList.remove('error-border')
-        ageInputError.style.opacity = '0'
         inputValues[4] = 'Age: ' + x
         inputErrors[4] = ''
         return true
@@ -127,7 +120,7 @@ function ageOnBlur() {
 }
 function ageOnFocus() {
     ageInput.classList.remove('error-border')
-    ageInputError.style.opacity = '0'
+    ageInputError.classList.remove('opacity-1')
     ageInput.select()
 }
 ageInput.addEventListener('blur', ageOnBlur)
@@ -140,12 +133,11 @@ function phoneOnBlur() {
     var x = phoneInput.value
     if (x.length < 7 || isNaN(x) || x.includes('.') || x.includes(' ')) {        
         phoneInput.classList.add('error-border')        
-        phoneInputError.style.opacity = '1'
+        phoneInputError.classList.add('opacity-1')
         inputErrors[5] = phoneInputError.textContent
         return false
     } else {
         phoneInput.classList.remove('error-border')
-        phoneInputError.style.opacity = '0'
         inputValues[5] = 'Phone Number: ' + x
         inputErrors[5] = ''
         return true
@@ -153,7 +145,7 @@ function phoneOnBlur() {
 }
 function phoneOnFocus() {
     phoneInput.classList.remove('error-border')
-    phoneInputError.style.opacity = '0'
+    phoneInputError.classList.remove('opacity-1')
     phoneInput.select()
 }
 phoneInput.addEventListener('blur', phoneOnBlur)
@@ -166,12 +158,11 @@ function addressOnBlur() {
     var x = addressInput.value
     if (x.length < 5 || x.search(/[a-z]/) < 0 || x.search(/[0-9]/) < 0 || x.indexOf(' ') == -1) {        
         addressInput.classList.add('error-border')        
-        addressInputError.style.opacity = '1'
+        addressInputError.classList.add('opacity-1')
         inputErrors[6] = addressInputError.textContent
         return false
     } else {
         addressInput.classList.remove('error-border')
-        addressInputError.style.opacity = '0'
         inputValues[6] = 'Address: ' + x
         inputErrors[6] = ''
         return true
@@ -179,7 +170,7 @@ function addressOnBlur() {
 }
 function addressOnFocus() {
     addressInput.classList.remove('error-border')
-    addressInputError.style.opacity = '0'
+    addressInputError.classList.remove('opacity-1')
     addressInput.select()
 }
 addressInput.addEventListener('blur', addressOnBlur)
@@ -192,12 +183,11 @@ function cityOnBlur() {
     var x = cityInput.value
     if (x.length < 3) {        
         cityInput.classList.add('error-border')        
-        cityInputError.style.opacity = '1'
+        cityInputError.classList.add('opacity-1')
         inputErrors[7] = cityInputError.textContent
         return false
     } else {
         cityInput.classList.remove('error-border')
-        cityInputError.style.opacity = '0'
         inputValues[7] = 'City: ' + x
         inputErrors[7] = ''
         return true
@@ -205,7 +195,7 @@ function cityOnBlur() {
 }
 function cityOnFocus() {
     cityInput.classList.remove('error-border')
-    cityInputError.style.opacity = '0'
+    cityInputError.classList.remove('opacity-1')
     cityInput.select()
 }
 cityInput.addEventListener('blur', cityOnBlur)
@@ -218,12 +208,11 @@ function postalOnBlur() {
     var x = postalInput.value
     if (x.length < 3 || x.search(/[0-9]/) < 0) {        
         postalInput.classList.add('error-border')        
-        postalInputError.style.opacity = '1'
+        postalInputError.classList.add('opacity-1')
         inputErrors[8] = postalInputError.textContent
         return false
     } else {
         postalInput.classList.remove('error-border')
-        postalInputError.style.opacity = '0'
         inputValues[8] = 'Postal Code: ' + x
         inputErrors[8] = ''
         return true
@@ -231,7 +220,7 @@ function postalOnBlur() {
 }
 function postalOnFocus() {
     postalInput.classList.remove('error-border')
-    postalInputError.style.opacity = '0'
+    postalInputError.classList.remove('opacity-1')
     postalInput.select()
 }
 postalInput.addEventListener('blur', postalOnBlur)
@@ -244,12 +233,11 @@ function dniOnBlur() {
     var x = dniInput.value
     if (x.length < 7 || x.length > 8 || x.search(/[a-z]/) > 0) {        
         dniInput.classList.add('error-border')        
-        dniInputError.style.opacity = '1'
+        dniInputError.classList.add('opacity-1')
         inputErrors[9] = dniInputError.textContent
         return false
     } else {
         dniInput.classList.remove('error-border')
-        dniInputError.style.opacity = '0'
         inputValues[9] = 'DNI: ' + x
         inputErrors[9] = ''
         return true
@@ -257,7 +245,7 @@ function dniOnBlur() {
 }
 function dniOnFocus() {
     dniInput.classList.remove('error-border')
-    dniInputError.style.opacity = '0'
+    dniInputError.classList.remove('opacity-1')
     dniInput.select()
 }
 dniInput.addEventListener('blur', dniOnBlur)
@@ -265,8 +253,8 @@ dniInput.addEventListener('focus', dniOnFocus)
 
 // Autocomplete Name
 function nameGreet() {
-    var titleName = document.getElementById('name-greet')
-    titleName.style.opacity = '1'
+    var titleName = document.getElementsByClassName('name-greet')[0]
+    titleName.classList.add('opacity-1')
     titleName.innerText = 'Hello ' + nameInput.value
 }
 nameInput.addEventListener('keydown', nameGreet)
@@ -293,14 +281,14 @@ button.addEventListener('click', clickButton)
 var modal = document.getElementById('myModal')
 var span = document.getElementsByClassName('close')[0]
 button.onclick = function() {// When the user clicks on the button, open the modal
-  modal.style.display = 'block'
+  modal.classList.add('modal-show')
 }
 span.onclick = function() {// When the user clicks on <span> (x), close the modal
-  modal.style.display = 'none'
+    modal.classList.remove('modal-show')
 }
 window.onclick = function(event) {// When the user clicks anywhere outside of the modal, close it
   if (event.target == modal) {
-    modal.style.display = 'none'
+    modal.classList.remove('modal-show')
   }
 }
 // Modal Fill Functions
@@ -331,7 +319,7 @@ function fetching() {
             if (res.status === 200) {
                 return res.json()
             } else {
-                throw res.status
+                throw Error(res.status)
             }
         })
         .then (function(data) {
